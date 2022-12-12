@@ -4,6 +4,7 @@
         font-family: Monaco;
         font-size: 14px;
         overscroll-behavior: none;
+        flex-wrap: nowrap;
     }
     
     .container {
@@ -76,6 +77,7 @@
         font-family: Monaco;
         font-size: 14px;
         overscroll-behavior: none;
+        flex-wrap: wrap;
     }
 
     .container {
