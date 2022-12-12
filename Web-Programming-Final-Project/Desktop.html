@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Desktop</title>
+        <link rel = "stylesheet" href = "css/Desktop.css" type = "text/css" media = "screen" charset = "utf-8">
+    </head>
+    <body>
+        <div class = "container" id = "main">
+            <ul class = "apps" id = "apps">
+                <li class = "app" id = "settings"><img class = "app_img" src = "images/system-preferences.png"><a>System Settings</a></li>
+                <li class = "app" id = "app1"><img class = "app_img" src = "images/app1.png"><a>HoloDive</a></li>
+                <li class = "app" id = "app2"><img class = "app_img" src = "images/instagram.png"><a>Instagram</a></li>
+                <li class = "app" id = "app3"><img class = "app_img" src = "images/discord.png"><a>Discord</a></li>
+            </ul>
+            <div class = "curr_time" id = "curr_time"></div>
+            <div class = "change_img" id = "change_img" style = "color: #fff;">
+                <button type = "button"><label for = "img_file">Upload Image</label></button>
+                <input id = "img_file" type = "file" accept = "image/*" onchange = "change(this)" style = "display: none;"> or <input id = "submit" type = "submit" value = "Reset">
+            </div>
+        </div>
+        <script type = "text/javascript" src = "js/Desktop.js"></script>
+    </body>
+</html>
