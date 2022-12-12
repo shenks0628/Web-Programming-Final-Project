@@ -121,10 +121,10 @@
     }
 
     .app {
-        height: 90px;
-        width: 90px;
-        padding: 10px;
-        margin: 15px;
+        height: 70px;
+        width: 70px;
+        padding: 5px;
+        margin: 10px;
         text-align: center;
         user-select: none;
         -webkit-user-select: none; /* for Safari */
@@ -132,8 +132,8 @@
     }
 
     .app_img {
-        height: 70px;
-        width: 70px;
+        height: 60px;
+        width: 60px;
         border-radius: 5px;
         object-fit: cover;
     }
