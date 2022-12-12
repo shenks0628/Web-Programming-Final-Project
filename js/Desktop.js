@@ -168,29 +168,6 @@ document.addEventListener("keydown", function(event){
             curr = undefined;
         }
     }
-    else if (event.shiftKey && event.keyCode == 70){
-        if (curr){
-            if (!isFull){
-                buff.push(curr.id[3]);
-                curr.style.top = "0%";
-                curr.style.left = "0%";
-                curr.style.width = "100%";
-                curr.style.height = "100%";
-                curr.style.borderRadius = "0px";
-                isFull = true;
-            }
-            else {
-                let tmp = parseInt(buff[0]) + 7;
-                buff = [];
-                curr.style.top = tmp + "%";
-                curr.style.left = tmp + "%";
-                curr.style.width = "83%";
-                curr.style.height = "83%";
-                curr.style.borderRadius = "10px";
-                isFull = false;
-            }
-        }
-    }
 }, false);
 
 function preshow(){
