@@ -87,22 +87,7 @@ function load1(){
         z += 1;
     }
     else {
-        let item = document.createElement("iframe");
-        item.id = "app1_page";
-        item.src = "https://holodive.onrender.com/";
-        item.style.position = "absolute";
-        item.style.top = "0%";
-        item.style.left = "0%";
-        item.style.zIndex = 10;
-        item.style.display = "block";
-        item.style.border = "none";
-        item.style.width = "100%";
-        item.style.height = "100%";
-        item.style.borderRadius = "0px";
-        item.style.overscrollBehavior = "none";
-        main.appendChild(item);
-        app1_page = document.getElementById("app1_page");
-        curr = app1_page;
+        window.open("https://holodive.onrender.com/","_self");
     }
 }
 app1.addEventListener("click", load1, false);
@@ -136,22 +121,7 @@ function load2(){
         z += 1;
     }
     else {
-        let item = document.createElement("iframe");
-        item.id = "app2_page";
-        item.src = "https://shenks0628.github.io/web/";
-        item.style.position = "absolute";
-        item.style.top = "0%";
-        item.style.left = "0%";
-        item.style.zIndex = 10;
-        item.style.display = "block";
-        item.style.border = "none";
-        item.style.width = "100%";
-        item.style.height = "100%";
-        item.style.borderRadius = "0px";
-        item.style.overscrollBehavior = "none";
-        main.appendChild(item);
-        app2_page = document.getElementById("app2_page");
-        curr = app2_page;
+        window.open("https://shenks0628.github.io/web/","_self");
     }
 }
 app2.addEventListener("click", load2, false);
@@ -186,22 +156,7 @@ function load3(){
         z += 1;
     }
     else {
-        let item = document.createElement("iframe");
-        item.id = "app3_page";
-        item.src = "https://shenks0628.github.io/web/";
-        item.style.position = "absolute";
-        item.style.top = "0%";
-        item.style.left = "0%";
-        item.style.zIndex = 10;
-        item.style.display = "block";
-        item.style.border = "none";
-        item.style.width = "100%";
-        item.style.height = "100%";
-        item.style.borderRadius = "0px";
-        item.style.overscrollBehavior = "none";
-        main.appendChild(item);
-        app3_page = document.getElementById("app3_page");
-        curr = app3_page;
+        window.open("https://shenks0628.github.io/web/","_self");
     }
 }
 app3.addEventListener("click", load3, false);
@@ -215,9 +170,6 @@ document.addEventListener("keydown", function(event){
     }
     else if (event.shiftKey && event.keyCode == 70){
         if (curr){
-            if (window.innerWidth <= 600){
-                return ;
-            }
             if (!isFull){
                 buff.push(curr.id[3]);
                 curr.style.top = "0%";
