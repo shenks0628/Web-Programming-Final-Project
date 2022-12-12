@@ -21,7 +21,7 @@ function change(file){
     if (file.files && file.files[0]){
         let reader = new FileReader();
         reader.onload = function(e){
-            if (window.innerWidth <= 600){ // phone
+            if (window.innerWidth <= 750){ // phone
                 main.style.backgroundImage = "url(" + e.target.result + ")";
                 localStorage.setItem("background_img_phone", e.target.result);
             }
@@ -35,7 +35,7 @@ function change(file){
     }
 }
 function reset(){
-    if (window.innerWidth <= 600){ // phone
+    if (window.innerWidth <= 750){ // phone
         main.style.backgroundImage = "url('https://media.idownloadblog.com/wp-content/uploads/2021/06/ios-15-iPhone-wallpaper-from-ispazio-dark.png')";
         localStorage.removeItem("background_img_phone");
         change_img.style.display = "none";
@@ -59,7 +59,7 @@ function show(){
 settings.addEventListener("click", show, false);
 
 function load1(){
-    if (window.innerWidth > 600){
+    if (window.innerWidth > 750){
         let app1_page = document.getElementById("app1_page");
         if (app1_page){
             app1_page.style.display = "block";
@@ -93,7 +93,7 @@ function load1(){
 app1.addEventListener("click", load1, false);
 
 function load2(){
-    if (window.innerWidth > 600){
+    if (window.innerWidth > 750){
         let app2_page = document.getElementById("app2_page");
         if (app2_page){
             app2_page.style.display = "block";
@@ -127,7 +127,7 @@ function load2(){
 app2.addEventListener("click", load2, false);
 
 function load3(){
-    if (window.innerWidth > 600){
+    if (window.innerWidth > 750){
         let app3_page = document.getElementById("app3_page");
         if (app3_page){
             app3_page.style.display = "block";
@@ -194,7 +194,7 @@ document.addEventListener("keydown", function(event){
 }, false);
 
 function preshow(){
-    if (window.innerWidth <= 600){ // phone
+    if (window.innerWidth <= 750){ // phone
         let url = localStorage.getItem("background_img_phone");
         if (url){
             main.style.backgroundImage = "url(" + url + ")";
@@ -213,14 +213,14 @@ function preshow(){
         }
     }
     
-    if (window.innerHeight <= 600 || window.innerWidth <= 600){
+    if (window.innerHeight <= 600 || window.innerWidth <= 750){
         apps.style.flexDirection = "row";
     }
     else {
         apps.style.flexDirection = "column";
     }
     
-    if (window.innerWidth <= 600){
+    if (window.innerWidth <= 750){
         z = 0;
         let app1_page = document.getElementById("app1_page");
         if (app1_page){
@@ -240,7 +240,7 @@ window.addEventListener("resize", preshow, false);
 
 function set_img(){
     z = 0;
-    if (window.innerWidth <= 600){ // phone
+    if (window.innerWidth <= 750){ // phone
         let url = localStorage.getItem("background_img_phone");
         if (url){
             main.style.backgroundImage = "url(" + url + ")";

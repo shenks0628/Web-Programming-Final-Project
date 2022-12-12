@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px){
+@media screen and (min-width: 750px){
     body {
         margin: 0px;
         font-family: Monaco;
@@ -69,7 +69,7 @@
     }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 750px){
     body {
         margin: 0px;
         font-family: Monaco;
