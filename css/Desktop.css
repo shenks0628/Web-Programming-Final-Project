@@ -125,6 +125,7 @@
         width: 65px;
         padding: 5px;
         margin: 2.5px;
+        margin-top: 5px;
         text-align: center;
         user-select: none;
         -webkit-user-select: none; /* for Safari */
