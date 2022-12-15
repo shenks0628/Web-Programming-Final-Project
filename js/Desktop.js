@@ -10,7 +10,6 @@ let app2 = document.getElementById("app2");
 let app3 = document.getElementById("app3");
 let z = 0;
 let curr;
-let isFull = false;
 const weather_map = new Map(
     [[0, "Clear"],
     [1, "Partly Cloudy"], [2, "Partly Cloudy"], [3, "Partly Cloudy"],
