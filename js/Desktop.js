@@ -1,5 +1,6 @@
 let main = document.getElementById("main");
 let curr_time = document.getElementById("curr_time");
+let curr_weather = document.getElementById("curr_weather");
 let change_img = document.getElementById("change_img");
 let submit = document.getElementById("submit");
 let apps = document.getElementById("apps");
@@ -10,7 +11,19 @@ let app3 = document.getElementById("app3");
 let z = 0;
 let curr;
 let isFull = false;
-let buff = [];
+const weather_map = new Map(
+    [[0, "clear sky"],
+    [1, "partly cloudy"], [2, "partly cloudy"], [3, "partly cloudy"],
+    [45, "fog"], [48, "fog"],
+    [51, "drizzle"], [53, "drizzle"], [55, "drizzle"],
+    [56, "freezing drizzle"], [57, "freezing drizzle"],
+    [61, "rain"], [63, "rain"], [65, "rain"],
+    [66, "freezing rain"], [67, "freezing rain"],
+    [71, "snow fall"], [73, "snow fall"], [75, "snow fall"],
+    [77, "snow grains"],
+    [80, "rain showers"], [81, "rain showers"], [82, "rain showers"],
+    [85, "snow showers"], [86, "snow showers"]]
+);
 
 setInterval(()=>{
     let d = new Date();
@@ -148,7 +161,6 @@ function load3(){
             item.style.height = "83%";
             item.style.borderRadius = "10px";
             item.style.overscrollBehavior = "none";
-            console.log(item.style.overscrollBehavior);
             main.appendChild(item);
             app3_page = document.getElementById("app3_page");
             curr = app3_page;
@@ -231,3 +243,71 @@ function set_img(){
     }
 }
 window.addEventListener("load", set_img, false);
+
+const successCallback = (position) => {
+    console.log(position);
+    let geoLat = position.coords.latitude.toFixed(5);
+    let geoLng = position.coords.longitude.toFixed(5);
+    let weather_condition;
+    $.getJSON("https://api.open-meteo.com/v1/forecast?latitude=" + geoLat + "&longitude=" + geoLng + "&current_weather=true", function(data) {
+        console.log(data.current_weather.temperature);
+        console.log(data.current_weather.weathercode);
+        weather_map.forEach((value, key) => {
+            if (key == data.current_weather.weathercode){
+                weather_condition = value;
+            }
+        });
+        curr_weather.innerHTML = data.current_weather.temperature + " °C " + weather_condition;
+    });
+    setInterval(()=>{
+        $.getJSON("https://api.open-meteo.com/v1/forecast?latitude=" + geoLat + "&longitude=" + geoLng + "&current_weather=true", function(data) {
+            console.log(data.current_weather.temperature);
+            console.log(data.current_weather.weathercode);
+            weather_map.forEach((value, key) => {
+                if (key == data.current_weather.weathercode){
+                    weather_condition = value;
+                }
+            });
+            curr_weather.innerHTML = data.current_weather.temperature + " °C " + weather_condition;
+        });
+    }, 600000);
+};
+const errorCallback = (error) => {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        default:
+            alert("An unknown error occurred.");
+    }
+    alert("We'll show the weather at NTOU.");
+    $.getJSON("https://api.open-meteo.com/v1/forecast?latitude=25.9253&longitude=121.463425&current_weather=true", function(data) {
+        console.log(data.current_weather.temperature);
+        console.log(data.current_weather.weathercode);
+        weather_map.forEach((value, key) => {
+            if (key == data.current_weather.weathercode){
+                weather_condition = value;
+            }
+        });
+        curr_weather.innerHTML = data.current_weather.temperature + " °C " + weather_condition;
+    });
+    setInterval(()=>{
+        $.getJSON("https://api.open-meteo.com/v1/forecast?latitude=25.9253&longitude=121.463425&current_weather=true", function(data) {
+            console.log(data.current_weather.temperature);
+            console.log(data.current_weather.weathercode);
+            weather_map.forEach((value, key) => {
+                if (key == data.current_weather.weathercode){
+                    weather_condition = value;
+                }
+            });
+            curr_weather.innerHTML = data.current_weather.temperature + " °C " + weather_condition;
+        });
+    }, 600000);
+};
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);

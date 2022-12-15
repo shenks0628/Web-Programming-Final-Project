@@ -31,6 +31,18 @@
         z-index: 10000;
     }
 
+    .curr_weather {
+        position: absolute;
+        top: 2%;
+        right: 1%;
+        mix-blend-mode: difference;
+        color: #fff;
+        user-select: none;
+        -webkit-user-select: none; /* for Safari */
+        cursor: default;
+        z-index: 10000;
+    }
+
     .change_img {
         display: none;
         position: absolute;
@@ -65,6 +77,7 @@
     }
 
     .app a {
+        mix-blend-mode: difference;
         color: #fff;
         position: relative;
         bottom: 5px;
@@ -93,6 +106,18 @@
     }
 
     .curr_time {
+        position: absolute;
+        top: 0.5%;
+        left: 1%;
+        mix-blend-mode: difference;
+        color: #fff;
+        user-select: none;
+        -webkit-user-select: none; /* for Safari */
+        cursor: default;
+        z-index: 10000;
+    }
+
+    .curr_weather {
         position: absolute;
         top: 0.5%;
         right: 1%;
@@ -140,6 +165,7 @@
     }
 
     .app a {
+        mix-blend-mode: difference;
         color: #fff;
         position: relative;
         bottom: 5px;
