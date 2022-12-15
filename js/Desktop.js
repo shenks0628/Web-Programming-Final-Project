@@ -12,17 +12,17 @@ let z = 0;
 let curr;
 let isFull = false;
 const weather_map = new Map(
-    [[0, "clear sky"],
-    [1, "partly cloudy"], [2, "partly cloudy"], [3, "partly cloudy"],
-    [45, "fog"], [48, "fog"],
-    [51, "drizzle"], [53, "drizzle"], [55, "drizzle"],
-    [56, "freezing drizzle"], [57, "freezing drizzle"],
-    [61, "rain"], [63, "rain"], [65, "rain"],
-    [66, "freezing rain"], [67, "freezing rain"],
-    [71, "snow fall"], [73, "snow fall"], [75, "snow fall"],
-    [77, "snow grains"],
-    [80, "rain showers"], [81, "rain showers"], [82, "rain showers"],
-    [85, "snow showers"], [86, "snow showers"]]
+    [[0, "Clear"],
+    [1, "Partly Cloudy"], [2, "Partly Cloudy"], [3, "Partly Cloudy"],
+    [45, "Fog"], [48, "Fog"],
+    [51, "Drizzle"], [53, "Drizzle"], [55, "Drizzle"],
+    [56, "Freezing Drizzle"], [57, "Freezing Drizzle"],
+    [61, "Rain"], [63, "Rain"], [65, "Rain"],
+    [66, "Freezing Rain"], [67, "Freezing Rain"],
+    [71, "Snow Fall"], [73, "Snow Fall"], [75, "Snow Fall"],
+    [77, "Snow Grains"],
+    [80, "Rain Showers"], [81, "Rain Showers"], [82, "Rain Showers"],
+    [85, "Snow Showers"], [86, "Snow Showers"]]
 );
 
 setInterval(()=>{
@@ -244,6 +244,7 @@ function set_img(){
 }
 window.addEventListener("load", set_img, false);
 
+// weather API from: https://open-meteo.com/en
 const successCallback = (position) => {
     console.log(position);
     let geoLat = position.coords.latitude.toFixed(5);
