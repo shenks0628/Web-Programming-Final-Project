@@ -33,7 +33,7 @@
 
     .curr_weather {
         position: absolute;
-        top: 2%;
+        top: 3%;
         right: 1%;
         mix-blend-mode: difference;
         color: #fff;
