@@ -28,7 +28,7 @@
         user-select: none;
         -webkit-user-select: none; /* for Safari */
         cursor: default;
-        z-index: 10000;
+        z-index: 10000000;
     }
 
     .curr_weather {
@@ -40,7 +40,7 @@
         user-select: none;
         -webkit-user-select: none; /* for Safari */
         cursor: default;
-        z-index: 10000;
+        z-index: 10000000;
     }
 
     .change_img {
@@ -114,7 +114,7 @@
         user-select: none;
         -webkit-user-select: none; /* for Safari */
         cursor: default;
-        z-index: 10000;
+        z-index: 10000000;
     }
 
     .curr_weather {
@@ -126,7 +126,7 @@
         user-select: none;
         -webkit-user-select: none; /* for Safari */
         cursor: default;
-        z-index: 10000;
+        z-index: 10000000;
     }
 
     .change_img {

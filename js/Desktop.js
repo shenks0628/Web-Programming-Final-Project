@@ -8,8 +8,17 @@ let settings = document.getElementById("settings");
 let app1 = document.getElementById("app1");
 let app2 = document.getElementById("app2");
 let app3 = document.getElementById("app3");
+let app1_control = document.getElementById("app1_control");
+let app2_control = document.getElementById("app2_control");
+let app3_control = document.getElementById("app3_control");
+let app1_exit = document.getElementById("app1_exit");
+let app2_exit = document.getElementById("app2_exit");
+let app3_exit = document.getElementById("app3_exit");
+let app1_full = document.getElementById("app1_full");
+let app2_full = document.getElementById("app2_full");
+let app3_full = document.getElementById("app3_full");
+let isFull = false;
 let z = 0;
-let curr;
 const weather_map = new Map(
     [[0, "Clear"],
     [1, "Partly Cloudy"], [2, "Partly Cloudy"], [3, "Partly Cloudy"],
@@ -76,7 +85,7 @@ function load1(){
         if (app1_page){
             app1_page.style.display = "block";
             app1_page.style.zIndex = z;
-            curr = app1_page;
+            app1_control.style.zIndex = z + 1;
         }
         else {
             let item = document.createElement("iframe");
@@ -94,9 +103,45 @@ function load1(){
             item.style.overscrollBehavior = "none";
             main.appendChild(item);
             app1_page = document.getElementById("app1_page");
-            curr = app1_page;
+            app1_control.style.position = "absolute";
+            app1_control.style.top = "8.2%";
+            app1_control.style.left = "8.2%";
+            app1_control.style.zIndex = z + 1;
+            app1_page.onload = function(){
+                app1_control.style.display = "block";
+            };
+            app1_exit.onclick = function(){
+                main.removeChild(app1_page);
+                app1_control.style.display = "none";
+            };
+            app1_full.onclick = function(){
+                if (!isFull){
+                    app1_page.style.top = "0%";
+                    app1_page.style.left = "0%";
+                    app1_page.style.zIndex = z;
+                    app1_page.style.width = "100%";
+                    app1_page.style.height = "100%";
+                    app1_control.style.top = "0.2%";
+                    app1_control.style.left = "0.2%";
+                    app1_control.style.zIndex = z + 1;
+                    z += 2;
+                    isFull = true;
+                }
+                else {
+                    app1_page.style.top = "8%";
+                    app1_page.style.left = "8%";
+                    app1_page.style.zIndex = z;
+                    app1_page.style.width = "83%";
+                    app1_page.style.height = "83%";
+                    app1_control.style.top = "8.2%";
+                    app1_control.style.left = "8.2%";
+                    app1_control.style.zIndex = z + 1;
+                    z += 2;
+                    isFull = false;
+                }
+            };
         }
-        z += 1;
+        z += 2;
     }
     else {
         window.open("https://holodive.onrender.com/","_self");
@@ -110,7 +155,7 @@ function load2(){
         if (app2_page){
             app2_page.style.display = "block";
             app2_page.style.zIndex = z;
-            curr = app2_page;
+            app2_control.style.zIndex = z + 1;
         }
         else {
             let item = document.createElement("iframe");
@@ -128,9 +173,45 @@ function load2(){
             item.style.overscrollBehavior = "none";
             main.appendChild(item);
             app2_page = document.getElementById("app2_page");
-            curr = app2_page;
+            app2_control.style.position = "absolute";
+            app2_control.style.top = "9.2%";
+            app2_control.style.left = "9.2%";
+            app2_control.style.zIndex = z + 1;
+            app2_page.onload = function(){
+                app2_control.style.display = "block";
+            };
+            app2_exit.onclick = function(){
+                main.removeChild(app2_page);
+                app2_control.style.display = "none";
+            };
+            app2_full.onclick = function(){
+                if (!isFull){
+                    app2_page.style.top = "0%";
+                    app2_page.style.left = "0%";
+                    app2_page.style.zIndex = z;
+                    app2_page.style.width = "100%";
+                    app2_page.style.height = "100%";
+                    app2_control.style.top = "0.2%";
+                    app2_control.style.left = "0.2%";
+                    app2_control.style.zIndex = z + 1;
+                    z += 2;
+                    isFull = true;
+                }
+                else {
+                    app2_page.style.top = "9%";
+                    app2_page.style.left = "9%";
+                    app2_page.style.zIndex = z;
+                    app2_page.style.width = "83%";
+                    app2_page.style.height = "83%";
+                    app2_control.style.top = "9.2%";
+                    app2_control.style.left = "9.2%";
+                    app2_control.style.zIndex = z + 1;
+                    z += 2;
+                    isFull = false;
+                }
+            };
         }
-        z += 1;
+        z += 2;
     }
     else {
         window.open("https://shenks0628.github.io/web/","_self");
@@ -144,7 +225,7 @@ function load3(){
         if (app3_page){
             app3_page.style.display = "block";
             app3_page.style.zIndex = z;
-            curr = app3_page;
+            app3_control.style.zIndex = z + 1;
         }
         else {
             let item = document.createElement("iframe");
@@ -162,24 +243,51 @@ function load3(){
             item.style.overscrollBehavior = "none";
             main.appendChild(item);
             app3_page = document.getElementById("app3_page");
-            curr = app3_page;
+            app3_control.style.position = "absolute";
+            app3_control.style.top = "10.2%";
+            app3_control.style.left = "10.2%";
+            app3_control.style.zIndex = z + 1;
+            app3_page.onload = function(){
+                app3_control.style.display = "block";
+            };
+            app3_exit.onclick = function(){
+                main.removeChild(app3_page);
+                app3_control.style.display = "none";
+            };
+            app3_full.onclick = function(){
+                if (!isFull){
+                    app3_page.style.top = "0%";
+                    app3_page.style.left = "0%";
+                    app3_page.style.zIndex = z;
+                    app3_page.style.width = "100%";
+                    app3_page.style.height = "100%";
+                    app3_control.style.top = "0.2%";
+                    app3_control.style.left = "0.2%";
+                    app3_control.style.zIndex = z + 1;
+                    z += 2;
+                    isFull = true;
+                }
+                else {
+                    app3_page.style.top = "10%";
+                    app3_page.style.left = "10%";
+                    app3_page.style.zIndex = z;
+                    app3_page.style.width = "83%";
+                    app3_page.style.height = "83%";
+                    app3_control.style.top = "10.2%";
+                    app3_control.style.left = "10.2%";
+                    app3_control.style.zIndex = z + 1;
+                    z += 2;
+                    isFull = false;
+                }
+            };
         }
-        z += 1;
+        z += 2;
     }
     else {
         window.open("https://shenks0628.github.io/web/","_self");
     }
 }
 app3.addEventListener("click", load3, false);
-
-document.addEventListener("keydown", function(event){
-    if (event.key == "Escape"){
-        if (curr){
-            main.removeChild(curr);
-            curr = undefined;
-        }
-    }
-}, false);
 
 function preshow(){
     if (window.innerWidth <= 750){ // phone
