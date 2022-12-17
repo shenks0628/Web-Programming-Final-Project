@@ -19,6 +19,18 @@
         position: relative;
     }
 
+    .exit_but {
+        border: none;
+        border-radius: 40%;
+        background-color: crimson;
+    }
+
+    .full_but {
+        border: none;
+        border-radius: 40%;
+        background-color: lightgreen;
+    }
+
     .curr_time {
         position: absolute;
         top: 0.5%;
