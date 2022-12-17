@@ -330,6 +330,9 @@ function preshow(){
         if (app3_page){
             main.removeChild(app3_page);
         }
+        app1_control.style.display = "none";
+        app2_control.style.display = "none";
+        app3_control.style.display = "none";
     }
 }
 window.addEventListener("resize", preshow, false);
