@@ -160,7 +160,7 @@ function load2(){
         else {
             let item = document.createElement("iframe");
             item.id = "app2_page";
-            item.src = "https://yesaouo.github.io/TGDY/html/shironekocalculator/shironekocalculator.html";
+            item.src = "https://yesaouo.github.io/Shironeko_Calculator/";
             item.style.position = "absolute";
             item.style.top = "9%";
             item.style.left = "9%";
@@ -214,7 +214,7 @@ function load2(){
         z += 2;
     }
     else {
-        window.open("https://yesaouo.github.io/TGDY/html/shironekocalculator/shironekocalculator.html","_self");
+        window.open("https://yesaouo.github.io/Shironeko_Calculator/","_self");
     }
 }
 app2.addEventListener("click", load2, false);
