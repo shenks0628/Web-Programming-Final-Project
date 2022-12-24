@@ -57,7 +57,7 @@ function change(file){
 }
 function reset(){
     if (window.innerWidth <= 750){ // phone
-        main.style.backgroundImage = "url('https://media.idownloadblog.com/wp-content/uploads/2021/06/ios-15-iPhone-wallpaper-from-ispazio-dark.png')";
+        main.style.backgroundImage = "url('https://9to5mac.com/?attachment_id=811133')";
         localStorage.removeItem("background_img_phone");
         change_img.style.display = "none";
     }
@@ -296,7 +296,7 @@ function preshow(){
             main.style.backgroundImage = "url(" + url + ")";
         }
         else {
-            main.style.backgroundImage = "url('https://media.idownloadblog.com/wp-content/uploads/2021/06/ios-15-iPhone-wallpaper-from-ispazio-dark.png')";
+            main.style.backgroundImage = "url('https://9to5mac.com/?attachment_id=811133')";
         }
     }
     else { // desktop
