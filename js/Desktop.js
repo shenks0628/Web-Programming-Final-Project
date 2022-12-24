@@ -230,7 +230,7 @@ function load3(){
         else {
             let item = document.createElement("iframe");
             item.id = "app3_page";
-            item.src = "https://shenks0628.github.io/web/";
+            item.src = "https://docs.google.com/presentation/d/1ONFWVvas8zwRXIvPW8E1gqdXSL-KG8oP6-QpHJoYAHI/edit?usp=sharing";
             item.style.position = "absolute";
             item.style.top = "10%";
             item.style.left = "10%";
@@ -284,7 +284,7 @@ function load3(){
         z += 2;
     }
     else {
-        window.open("https://shenks0628.github.io/web/","_self");
+        window.open("https://docs.google.com/presentation/d/1ONFWVvas8zwRXIvPW8E1gqdXSL-KG8oP6-QpHJoYAHI/edit?usp=sharing","_self");
     }
 }
 app3.addEventListener("click", load3, false);
